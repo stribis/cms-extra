@@ -1,0 +1,3 @@
+RewriteEngine On
+RewriteRule ^login$ Views/login.php [L]
+RewriteRule ^registration$ Views/registration.php [L]
