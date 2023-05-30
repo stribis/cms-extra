@@ -1,4 +1,5 @@
-<?php require_once('../Controller/Register.php'); ?>
+<?php require_once('./config.php'); ?>
+<?php require_once('./Controller/Register.php'); ?>
 <?php
   $Register = new Register();
   $Response = [];
@@ -7,8 +8,8 @@
 ?>
 <!doctype html>
 <html lang="en" data-bs-theme="auto">
+<?php require('partials/head.php'); ?>
 <body>
-  <?php require('partials/head.php'); ?>
   <?php require('partials/nav.php'); ?>
   <main role="main" class="container">
     <div class="row justify-content-center mt-5">

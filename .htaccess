@@ -1,3 +1,6 @@
 RewriteEngine On
-RewriteRule ^login$ Views/login.php [L]
-RewriteRule ^registration$ Views/registration.php [L]
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteRule ^([^\.]+)$ $1.php [NC,L]
+
+# RewriteCond %{REQUEST_URI} !^/(views|css|js|media|partials|php)
+# RewriteRule (.*) /views/$1

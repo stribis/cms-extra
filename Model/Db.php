@@ -1,10 +1,10 @@
 <?php
 
 class Db {
-  protected $dbName = 'cms_example'; /** Database Name */
+    protected $dbName = 'cms-example'; /** Database Name */
     protected $dbHost = 'localhost'; /** Database Host */
     protected $dbUser = 'root';      /** Database Root */
-    protected $dbPass = 'root';      /** Database Password */
+    protected $dbPass = '';      /** Database Password */
     protected $dbHandler, $dbStmt;
 
 

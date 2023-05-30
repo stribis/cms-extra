@@ -1,6 +1,6 @@
 <?php
   require_once(__dir__ . '/Controller.php');
-  require_once('../Model/RegisterModel.php');
+  require_once('Model/RegisterModel.php');
   class Register extends Controller {
 
     public $active = 'Register'; //for highlighting the active link...
@@ -77,7 +77,7 @@
 
       $_SESSION['data'] = $Data;
       $_SESSION['auth_status'] = true;
-      header("Location: dashboard.php");
+      header("Location: /dashboard");
       return true;
     }
   }

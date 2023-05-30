@@ -1,6 +1,6 @@
 <?php
 require_once(__dir__ . '/Controller.php');
-require_once('../Model/LoginModel.php');
+require_once('Model/LoginModel.php');
 
 class Login extends Controller {
 
@@ -39,7 +39,7 @@ class Login extends Controller {
 
         $_SESSION['data'] = $EmailRecords['data'];
         $_SESSION['auth_status'] = true;
-        header("Location: dashboard.php");
+        header("Location: /dashboard");
       }
 
       $Response = array(
