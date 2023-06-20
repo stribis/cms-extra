@@ -34,7 +34,6 @@
       $Error = array(
         'name' => '',
         'email' => '',
-        'phone' => '',
         'password' => '',
         'status' => false
       );

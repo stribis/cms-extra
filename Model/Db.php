@@ -4,7 +4,7 @@ class Db {
     protected $dbName = 'cms-example'; /** Database Name */
     protected $dbHost = 'localhost'; /** Database Host */
     protected $dbUser = 'root';      /** Database Root */
-    protected $dbPass = '';      /** Database Password */
+    protected $dbPass = 'root';      /** Database Password */
     protected $dbHandler, $dbStmt;
 
 

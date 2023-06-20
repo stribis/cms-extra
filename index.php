@@ -40,7 +40,9 @@
         <?php foreach ($Posts['data'] as $post) :  ?>
           <div class="col">
             <div class="card shadow-sm">
-              <img src="uploads/<?= $post['image'] ?>" alt="<?= $post['title'] ?>">
+              <div class="img-container mw-100" style="height:200px; overflow-y:hidden;">
+                <img class="mw-100" src="uploads/<?= $post['image'] ?>" alt="<?= $post['title'] ?>">
+              </div>
               <div class="card-body">
                 <h3><?= $post['title'] ?></h3>
                 <p class="card-text"><?= substr($post['content'], 0, 30) ?>...</p>

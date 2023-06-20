@@ -11,8 +11,6 @@
     <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
       <div class="navbar-nav">
         <a class="nav-link active" aria-current="page" href="/">Home</a>
-        <!-- <a class="nav-link" href="#">Features</a>
-        <a class="nav-link" href="#">Pricing</a> -->
         <ul class="navbar-nav ml-auto">
             <?php if (!isset($_SESSION['auth_status'])) : ?>
               <li class="nav-item">
@@ -25,8 +23,9 @@
               <li class="nav-item">
                 <a href="<?php echo BASE_URL; ?>dashboard" class="nav-link">Dashboard</a>
               </li>
-            <?php endif; ?>
-            <?php if (isset($_SESSION['auth_status'])) : ?>
+              <li class="nav-item">
+                <a href="<?php echo BASE_URL; ?>profile" class="nav-link">Profile</a>
+              </li>
               <li class="nav-item">
                 <a class="nav-link" href="<?php echo BASE_URL; ?>logout">Logout</a>
               </li>
