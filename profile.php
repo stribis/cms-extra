@@ -1,23 +1,24 @@
 <?php require_once('./config.php'); ?>
 <?php require_once('./Controller/Profile.php'); ?>
 <?php
-  $Profile = new Profile();
-  $Response = [];
-  $active = $Profile->active;
-  $UserData = $Profile->getUser();
-  if (isset($_POST['profile_edit']) && count($_POST) > 0) $Response = $Profile->editUser($_POST);
-  if (isset($_POST['reset_password']) && count($_POST) > 0) $Response = $Profile->changePassword($_POST);
+$Profile = new Profile();
+$Response = [];
+$active = $Profile->active;
+$UserData = $Profile->getUser();
+if (isset($_POST['profile_edit']) && count($_POST) > 0) $Response = $Profile->editUser($_POST);
+if (isset($_POST['reset_password']) && count($_POST) > 0) $Response = $Profile->changePassword($_POST);
 
- 
+
 ?>
 <!doctype html>
 <html lang="en" data-bs-theme="auto">
 <?php require('partials/head.php'); ?>
+
 <body>
   <?php require('partials/nav.php'); ?>
   <main role="main" class="container">
     <div class="row justify-content-center mt-5">
-      <?php if (isset($_GET['updated'])): ?>
+      <?php if (isset($_GET['updated'])) : ?>
         <div class="alert alert-info alert-dismissible fade show" role="alert">
           Your user profile has been updated !
           <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
@@ -27,7 +28,7 @@
         <?php if (isset($Response['status']) && !$Response['status']) : ?>
           <br>
           <div class="alert alert-danger alert-dismissible fade show" role="alert">
-          Some errors occurred in your form
+            Some errors occurred in your form
             <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
           </div>
         <?php endif; ?>
@@ -78,7 +79,7 @@
                 <?php endif; ?>
               </div>
             </div>
-       
+
             <div class="col-xs-12 col-sm-12 col-md-12 col-xl-12 col-lg-12 mt-4">
               <button class="btn btn-md btn-primary btn-block" type="submit" name="reset_password">Change</button>
             </div>

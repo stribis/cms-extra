@@ -1,14 +1,15 @@
 <?php require_once('../config.php'); ?>
 <?php require_once('../Controller/Dashboard.php'); ?>
 <?php
-  $Dashboard = new Dashboard();
-  $Response = [];
-  $active = $Dashboard->active;
-  if (isset($_POST) && count($_POST ) > 0 && isset($_FILES)) $Response = $Dashboard->createPost($_POST, $_FILES);
+$Dashboard = new Dashboard();
+$Response = [];
+$active = $Dashboard->active;
+if (isset($_POST) && count($_POST) > 0 && isset($_FILES)) $Response = $Dashboard->createPost($_POST, $_FILES);
 ?>
 <!doctype html>
 <html lang="en" data-bs-theme="auto">
 <?php require('../partials/head.php'); ?>
+
 <body>
   <?php require('../partials/nav.php'); ?>
   <main role="main" class="container">
@@ -17,7 +18,7 @@
         <?php if (isset($Response['status']) && !$Response['status']) : ?>
           <br>
           <div class="alert alert-danger alert-dismissible fade show" role="alert">
-          Some errors occurred in your form
+            Some errors occurred in your form
             <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
           </div>
         <?php endif; ?>

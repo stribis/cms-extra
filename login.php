@@ -1,14 +1,15 @@
 <?php require_once('./config.php'); ?>
 <?php require_once('./Controller/Login.php'); ?>
 <?php
-  $Login = new Login();
-  $Response = [];
-  $active = $Login->active;
-  if (isset($_POST) && count($_POST) > 0) $Response = $Login->login($_POST);
+$Login = new Login();
+$Response = [];
+$active = $Login->active;
+if (isset($_POST) && count($_POST) > 0) $Response = $Login->login($_POST);
 ?>
 <!doctype html>
 <html lang="en" data-bs-theme="auto">
 <?php require('partials/head.php'); ?>
+
 <body>
   <?php require('partials/nav.php'); ?>
 

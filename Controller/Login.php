@@ -2,16 +2,17 @@
 require_once(__dir__ . '/Controller.php');
 require_once('Model/LoginModel.php');
 
-class Login extends Controller {
+class Login extends Controller
+{
 
   public $active = 'login'; //for highlighting the active link...
   private $loginModel;
 
   /**
-    * @param null|void
-    * @return null|void
-    * ? Checks if the user session is set and creates a new instance of the LoginModel...
-  **/
+   * @param null|void
+   * @return null|void
+   * ? Checks if the user session is set and creates a new instance of the LoginModel...
+   **/
   public function __construct()
   {
     if (isset($_SESSION['auth_status'])) header("Location: dashboard.php");
@@ -19,10 +20,10 @@ class Login extends Controller {
   }
 
   /**
-    * @param array
-    * @return array|boolean
-    * ? Verifies and redirects a user by calling the login method on the LoginModel...
-  **/
+   * @param array
+   * @return array|boolean
+   * ? Verifies and redirects a user by calling the login method on the LoginModel...
+   **/
   public function login(array $data)
   {
     $email = stripcslashes(strip_tags($data['email']));
@@ -54,4 +55,3 @@ class Login extends Controller {
     return $Response;
   }
 }
- ?>

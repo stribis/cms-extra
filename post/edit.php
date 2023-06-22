@@ -1,17 +1,18 @@
 <?php require_once('../config.php'); ?>
 <?php require_once('../Controller/Dashboard.php'); ?>
 <?php
-  $Dashboard = new Dashboard();
-  $Response = [];
-  $active = $Dashboard->active;
-  $Post = $Dashboard->getPost($_GET['id']);
-  if (isset($_POST) && count($_POST) > 0) $Response = $Dashboard->editPost($_POST, $_GET['id'], $_FILES);
+$Dashboard = new Dashboard();
+$Response = [];
+$active = $Dashboard->active;
+$Post = $Dashboard->getPost($_GET['id']);
+if (isset($_POST) && count($_POST) > 0) $Response = $Dashboard->editPost($_POST, $_GET['id'], $_FILES);
 
- 
+
 ?>
 <!doctype html>
 <html lang="en" data-bs-theme="auto">
 <?php require('../partials/head.php'); ?>
+
 <body>
   <?php require('../partials/nav.php'); ?>
   <main role="main" class="container">
@@ -20,7 +21,7 @@
         <?php if (isset($Response['status']) && !$Response['status']) : ?>
           <br>
           <div class="alert alert-danger alert-dismissible fade show" role="alert">
-          Some errors occurred in your form
+            Some errors occurred in your form
             <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
           </div>
         <?php endif; ?>
@@ -65,7 +66,7 @@
                   <small class="form-text text-danger"><?php echo $Response['message']; ?></small>
                 <?php endif; ?>
               </div>
-                <input type="text" name="original" class="visually-hidden" value="<?= $Post['data']['image']; ?>">
+              <input type="text" name="original" class="visually-hidden" value="<?= $Post['data']['image']; ?>">
             </div>
             <div class="col-xs-12 col-sm-12 col-md-12 col-xl-12 col-lg-12 mt-4">
               <button class="btn btn-md btn-primary btn-block" type="submit">Edit</button>

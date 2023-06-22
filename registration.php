@@ -1,14 +1,15 @@
 <?php require_once('./config.php'); ?>
 <?php require_once('./Controller/Register.php'); ?>
 <?php
-  $Register = new Register();
-  $Response = [];
-  $active = $Register->active;
-  if (isset($_POST) && count($_POST) > 0) $Response = $Register->register($_POST);
+$Register = new Register();
+$Response = [];
+$active = $Register->active;
+if (isset($_POST) && count($_POST) > 0) $Response = $Register->register($_POST);
 ?>
 <!doctype html>
 <html lang="en" data-bs-theme="auto">
 <?php require('partials/head.php'); ?>
+
 <body>
   <?php require('partials/nav.php'); ?>
   <main role="main" class="container">
