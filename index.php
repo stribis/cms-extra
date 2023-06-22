@@ -1,5 +1,5 @@
 <?php require_once('./config.php'); ?>
-<?php require_once('./controller/Home.php'); ?>
+<?php require_once('./Controller/Home.php'); ?>
 <?php
   $Home = new Home();
   $active = $Home->active;
